@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} Все курсы {% endblock %}
+
+{% block content %}
+{% for obj in page_obj %}
+<div class="card" style="width: 18rem;">
+    <img src="obj.logo" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{obj.title}}</h5>
+      <p class="card-text">{{obj.description}}<p>
+      <a href="cours:lesson_list" class="btn btn-primary">Уроки курса</a>
+    </div>
+  </div>
+{% endfor %}
+{% endblock %}

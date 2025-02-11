@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Создание курса{% endblock %}
+
+{% block content %}
+<form method="post" action="{% url 'cours_create'%}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="title" class="form-label">Название курса</label>
+      <input type="text" class="form-control" id="title" aria-describedby="title" required>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Описание курса</label>
+      <input type="text" class="form-control" id="description">
+    </div>
+    <div class="mb-3 form-check">
+      <label class="form-check-label" for="start-data">Дата начала курса</label>
+      <input type="data" class="form-check-input" id="start-data">
+    </div>
+    <div class="mb-3 form-check">
+        <label class="form-check-label" for="end-data">Дата окончания курса</label>
+        <input type="data" class="form-check-input" id="end-data">
+      </div>
+    <button type="submit" class="btn btn-primary">Создать курс</button>
+  </form>
+{% endblock %}
